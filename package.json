@@ -1,0 +1,13 @@
+{
+  "name": "spa-tutorial",
+  "version": "1.0.0",
+  "description": "learned SPA",
+  "main": "index.js",
+  "repository": "https://github.com/EthanKwon/spa-tutorial.git",
+  "author": "Ethan Kwon [ethkwon@gmail.com]",
+  "license": "MIT",
+  "scripts": {
+    "link": "serve -p 5001 1_link",
+    "ajax": "serve -p 5002 2_ajax"
+  }
+}
