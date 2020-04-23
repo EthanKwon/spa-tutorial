@@ -86,6 +86,6 @@ JS 구현
 
 - window의 hashchange 이벤트를 통해 hash 변경 감지
 - URL에 불필요한 **#**이 들어가는 단점
-- hash 방식의 사이트는 SEO 이슈 발생
+- hash 방식의 사이트는 SEO 이슈 발생 **(가장 큰 단점)**
 
 1. PJAX를 통한 방식
