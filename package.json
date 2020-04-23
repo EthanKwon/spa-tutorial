@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "link": "serve -p 5001 1_link",
-    "ajax": "serve -p 5002 2_ajax"
+    "ajax": "serve -p 5002 2_ajax",
+    "hash": "serve -p 5003 3_hash"
   }
 }

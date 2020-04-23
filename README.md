@@ -72,6 +72,20 @@ JS 구현
 - history 관리 불가 (하나의 URL을 사용하기 때문에)
 - SEO 이슈 (하나의 URL로 인해 새로고침이 없어 방문자수 낮음)
 
-1. HASH를 통한 방식
-2. PJAX를 통한 방식
-3.
+3. Hash를 통한 방식
+
+- Hash : URL의 fragment identifier의 고유기능인 앵커(Anchor)사용
+
+![hash_html](images/hash_html.png)
+
+- link tag의 href Attribute에 hash사용
+- URL이 동일한 상태에서 hash가 변경되면 브라우저는 서버에 어떠한 요청도 하지 않음 **(hash만 변경되면 페이지 갱신 X)**
+- 고유의 논리적 URL이 존재하므로 history 관리 가능
+
+![hash_js](images/hash_js.png)
+
+- window의 hashchange 이벤트를 통해 hash 변경 감지
+- URL에 불필요한 **#**이 들어가는 단점
+- hash 방식의 사이트는 SEO 이슈 발생
+
+1. PJAX를 통한 방식
