@@ -9,6 +9,7 @@
   "scripts": {
     "link": "serve -p 5001 1_link",
     "ajax": "serve -p 5002 2_ajax",
-    "hash": "serve -p 5003 3_hash"
+    "hash": "serve -p 5003 3_hash",
+    "pjax": "serve -p 5004 4_pjax"
   }
 }

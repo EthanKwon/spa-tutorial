@@ -31,6 +31,8 @@ Learned SPA
 
 1. link를 통한 방식
 
+**HTML 구현**
+
 ![link_code](images/link_code.png)
 
 - link tag 클릭시, tag의 attribute값인 경로가 URL의 path값에 추가 되어 주소창에 나타나고 리소스를 서버에 요청함
@@ -45,12 +47,12 @@ Learned SPA
 - 중복된 리소스를 다시요청하면서 새로고침이 발생하는 단점
 - 복잡한 웹페이지의 경우, 중복된 리소스 요청으로 속도저하의 단점
 
-2. AJAX를 통한 방식
+1. AJAX를 통한 방식
 
 - AJAX : JS를 이용해 비동기적으로 서버와 브라우저가 데이터를 교환하는 통신방식
 - 페이지의 일부만 갱신하고도 전체 렌더링 효과
 
-html 구현
+**HTML 구현**
 
 ![ajax_index](images/ajax_index.png)
 
@@ -62,7 +64,7 @@ html 구현
 - 불필요한 리소스 중복 요청 방지
 - 페이지 전체를 렌더링 하는 것이 아닌 일부만 갱신하므로 향상된 사용자 경험을 구현
 
-JS 구현
+**JS 구현**
 
 ![ajax_js](images/ajax_js.png)
 
@@ -76,11 +78,15 @@ JS 구현
 
 - Hash : URL의 fragment identifier의 고유기능인 앵커(Anchor)사용
 
+**HTML 구현**
+
 ![hash_html](images/hash_html.png)
 
 - link tag의 href Attribute에 hash사용
 - URL이 동일한 상태에서 hash가 변경되면 브라우저는 서버에 어떠한 요청도 하지 않음 **(hash만 변경되면 페이지 갱신 X)**
 - 고유의 논리적 URL이 존재하므로 history 관리 가능
+
+**JS 구현**
 
 ![hash_js](images/hash_js.png)
 
@@ -88,4 +94,34 @@ JS 구현
 - URL에 불필요한 **#**이 들어가는 단점
 - hash 방식의 사이트는 SEO 이슈 발생 **(가장 큰 단점)**
 
-1. PJAX를 통한 방식
+4. PJAX를 통한 방식
+
+- PJAX : HTML5의 History API의 pushState와 popState event를 이용한 방식
+
+**HTML 구현**
+
+![pjax_index](images/pjax_index.png)
+
+- href Attribute로 path 값을 사용
+- 클릭시 path 값이 URI로 추가
+
+**JS 구현**
+
+![pjax_js](images/pjax_js.png)
+
+- pushState를 통해 주소창의 URL을 변경하고 URL을 history entry로 추가하지만 요청하지 않는다.
+
+- 서버에 새로운 요청을 하지 않으며, 페이지가 새로 갱신 되지 않음
+- 페이지마다 고유의 URL이 존재해 history관리에 문제가 없음
+- hash를 사용하지 않아 SEO 이슈가 발생하지 않음
+
+### 요약 정리
+
+결론적으로 각각의 특징을 알고 자신의 목적에 따라 어떤 방법이 가장 효과적인지 알고 사용하는 것이 좋다고 생각한다.
+
+| 구분             | History 관리 | SEO 대응 | 사용자 경험 | 서버 랜더링 |
+| :--------------- | :----------: | :------: | :---------: | :---------: |
+| 전통적 링크 방식 |      ◯       |    ◯     |      ✗      |      ◯      |
+| AJAX 방식        |      ✗       |    ✗     |      ◯      |      ✗      |
+| Hash 방식        |      ◯       |    ✗     |      ◯      |      ✗      |
+| PJAX 방식        |      ◯       |    ◯     |      ◯      |      △      |
